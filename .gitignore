@@ -1,0 +1,7 @@
+
+# folders
+node_modules
+tests_output
+
+#files
+.env
