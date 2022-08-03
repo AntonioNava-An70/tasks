@@ -80,7 +80,3 @@ describe("The Login Page", () => {
     browser.end();
   });
 });
-
-//TODO: assert[.not].title()
-//TODO: assert[.not].urlContains()
-//TODO: assert[.not].urlEquals()
