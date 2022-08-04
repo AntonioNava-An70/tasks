@@ -1,0 +1,46 @@
+### Google ###
+
+npm run group -- --group google
+
+> 0night@1.0.0 group
+> node nightwatch
+
+[Demo Test for grouping] Test Suite
+──────────────────────────────────────────────────────────────────────
+⠴ Starting ChromeDriver on port 4444...
+
+ℹ Connected to ChromeDriver on port 4444 (2273ms).
+Using: chrome (103.0.5060.134) on WINDOWS.
+
+Running Should be Open Google home page:
+───────────────────────────────────────────────────────────────────────────────────────────────────
+ℹ Loaded url https://www.google.com in 946ms
+√ Testing if the URL is 'https://www.google.com/' (15ms)
+
+OK. 1 assertions passed. (1.103s)
+
+
+
+### Unosquare ###
+
+npm run group -- --group unosquare
+
+> 0night@1.0.0 group
+> node nightwatch
+
+[Demo Test for grouping Unosquare test] Test Suite
+───────────────────────────────────────────────────────────────────────────────
+⠼ Starting ChromeDriver on port 4444...
+
+ℹ Connected to ChromeDriver on port 4444 (857ms).
+Using: chrome (103.0.5060.134) on WINDOWS.
+
+Running Should be Open Unosquare home page:
+───────────────────────────────────────────────────────────────────────────────────────────────────
+ℹ Loaded url https://www.unosquare.com in 2485ms
+√ Testing if the URL is 'https://www.unosquare.com/' (14ms)
+
+OK. 1 assertions passed. (2.656s)
+
+
+

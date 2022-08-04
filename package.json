@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nightwatch",
-    "group" : "node nightwatch"    
+    "group": "node nightwatch"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,9 @@
     "nightwatch": "^2.3.0"
   },
   "devDependencies": {
-    "chromedriver": "^103.0.0"
+    "chromedriver": "^103.0.0",
+    "fs": "^0.0.1-security",
+    "handlebars": "^4.7.7",
+    "path": "^0.12.7"
   }
 }
