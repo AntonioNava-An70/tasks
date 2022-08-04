@@ -1,6 +1,6 @@
-const homeSelectors = require('../selectors/home')
-const quickstartsSelectors = require('../selectors/quickstarts')
-const blogSelectors = require('../selectors/blog')
+const homeSelectors = require('../../selectors/nightwatch/home')
+const quickstartsSelectors = require('../../selectors/nightwatch/quickstarts')
+const blogSelectors = require('../../selectors/nightwatch/blog')
 
 describe('Demo Running multiple Scripts', () => {
 	before(() => {

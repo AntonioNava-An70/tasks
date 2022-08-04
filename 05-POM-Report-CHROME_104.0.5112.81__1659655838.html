@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Results - CHROME 104.0.5112.81  </title>
+
+  <style>
+    html, body {
+      font-family: Arial,sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body { padding: 10px 40px; }
+
+    table { width: 100%; margin-bottom: 20px; }
+
+      td {
+        padding: 7px;
+        border-top: none;
+        border-left: 1px black solid;
+        border-bottom: 1px black solid;
+        border-right: none;
+      }
+
+      td.pass { color: #003b07; background: #86e191; }
+      td.skip { color: #7d3a00; background: #ffd24a; }
+      td.fail { color: #5e0e00; background: #ff9c8a; }
+
+    tr:last-child       { border-top: 1px black solid; }
+      tr:last-child td    { border-top: 1px black solid; }
+      tr:first-child td   { border-top: 1px black solid; }
+        td:last-child       { border-right: 1px black solid; }
+
+    tr.overview td      { padding-bottom: 0px; border-bottom: none; }
+    tr.overview.last td { padding-bottom: 3px; }
+
+    ul.assertions   { list-style-type: none; }
+      span.error      { color: #AD2B2B; }
+      span.success    { color: #53891E; }
+
+    .stacktrace { display: inline; }
+      .stacktrace code { display: none; }
+
+    #nightwatch-logo {
+      position: absolute;
+      top: 20px;
+      right: 33px;
+      width: 70px;
+      height: 75px;
+      background: transparent url('http://nightwatchjs.org/img/logo-nightwatch.png') no-repeat;
+      background-size: 70px 75px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Test Results</h1>
+
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr class="overview">
+      <td colspan="3" title="CHROME 104.0.5112.81  "><strong>Browser:</strong> CHROME 104.0.5112.81  </td>
+    </tr>
+    <tr class="overview">
+      <td colspan="3"><strong>Timestamp:</strong> Thu Aug 04 2022 19:30:38 GMT-0400 (Bolivia Time)</td>
+    </tr>
+    <tr class="overview last">
+      <td colspan="3"><strong>Tests:</strong> 61<br></td>
+    </tr>
+    <tr>
+      <td class="pass"><strong>57</strong> passed</td>
+      <td class="skip"><strong>0</strong> errors</td>
+      <td class="fail"><strong>4</strong> failures</td>
+    </tr>
+  </table>
+
+      <h2>01-assertions</h2>
+
+        <h3>Demo Text Box</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;#userName-label&gt; was visible after 28 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if attribute [0;33m&#x27;placeholder&#x27;[0m of element [0;33m&lt;form div[id&#x3D;&quot;userEmail-wrapper&quot;] div input&gt;[0m contains [0;33m&#x27;name@example&#x27;[0m [0;90m(52ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if attribute [0;33m&#x27;placeholder&#x27;[0m of element [0;33m&lt;#userName&gt;[0m equals [0;33m&#x27;Full Name&#x27;[0m [0;90m(28ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Verifying that the Address is being displayed [0;90m(43ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element [0;33m&lt;#submit&gt;[0m has css property [0;33m&#x27;display[0m: [0;33minline-block&#x27;[0m [0;90m(21ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element [0;33m&lt;form div[id&#x3D;&quot;permanentAddress-wrapper&quot;] div label&gt;[0m has css property [0;33m&#x27;display[0m: [0;33minline-block&#x27;[0m [0;90m(18ms)[0m
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>6</strong></span> assertions passed. (4.053s)
+        </p>
+        <h3>Demo Practice Form</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;body&gt; was visible after 17 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="error">&#10006;</span>
+
+              Testing if value of element [0;33m&lt;#dateOfBirthInput&gt;[0m equals [0;33m&#x27;03 Aug 2022&#x27;[0m in 5000ms - expected [0;32m&quot;equals &#x27;03 Aug 2022&#x27;&quot;[0m but got: [0;31m&quot;04 Aug 2022&quot;[0m [0;90m(5406ms)[0m
+
+                Expected &quot;equals &#x27;03 Aug 2022&#x27;&quot; but got: &quot;04 Aug 2022&quot;
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="error"><strong>FAILED:</strong></span>
+            <span class="error"><strong>1</strong></span> assertions failed and
+            <span class="success"><strong>1</span></strong> passed. (7.260s)
+        </p>
+        <h3>Demo Extra Assertions</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;body&gt; was visible after 13 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              First Card should be displayed  [0;90m(38ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Second Card should not be displayed  [0;90m(21ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              The Page Title should be ToolsQA in TitleCase [0;90m(16ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              The URL should be equals to https://demoqa.com/accordian [0;90m(16ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Verify that it is the accordian page [0;90m(16ms)[0m
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>6</strong></span> assertions passed. (1.255s)
+        </p>
+
+
+      <hr>
+      <h2>google\firstGoogle.test</h2>
+
+        <h3>Title should be Google</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the page title equals [0;33m&#x27;Google&#x27;[0m [0;90m(8ms)[0m
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>1</strong></span> assertions passed. (1.078s)
+        </p>
+        <h3>Should be Open Google home page</h3>
+        <ul class="assertions">
+            <li>
+                <span class="error">&#10006;</span>
+
+              Testing if the URL is [0;33m&#x27;https://www.google.com&#x27;[0m in 5000ms - expected [0;32m&quot;is &#x27;https://www.google.com&#x27;&quot;[0m but got: [0;31m&quot;https://www.google.com/&quot;[0m [0;90m(5284ms)[0m
+
+                Expected &quot;is &#x27;https://www.google.com&#x27;&quot; but got: &quot;https://www.google.com/&quot;
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="error"><strong>FAILED:</strong></span>
+            <span class="error"><strong>1</strong></span> assertions failed and
+            <span class="success"><strong>0</span></strong> passed. (5.720s)
+        </p>
+        <h3>Verify that image Google is displayed</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element [0;33m&lt;img[alt&#x3D;&quot;Google&quot;]&gt;[0m is visible [0;90m(35ms)[0m
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>1</strong></span> assertions passed. (0.3990s)
+        </p>
+
+
+      <hr>
+      <h2>nightwatch\02-running-multiple-scripts</h2>
+
+        <h3>First Test Case</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the URL is [0;33m&#x27;https://nightwatchjs.org/&#x27;[0m [0;90m(23ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the page title equals [0;33m&#x27;Nightwatch.js | Node.js powered End-to-End testing framework&#x27;[0m [0;90m(16ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;div[class&#x3D;&quot;download&quot;] div[class&#x3D;&quot;container&quot;] div[class&#x3D;&quot;row&quot;] div&gt; was visible after 22 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if attribute [0;33m&#x27;href&#x27;[0m of element [0;33m&lt;div[class&#x3D;&quot;download&quot;] div[class&#x3D;&quot;container&quot;] div[class&#x3D;&quot;row&quot;] div a&gt;[0m contains [0;33m&#x27;https://nightwatchjs.org/guide/getting-started/installation.html&#x27;[0m [0;90m(31ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the URL is [0;33m&#x27;https://nightwatchjs.org/guide/quickstarts/create-and-run-a-nightwatch-test.html&#x27;[0m [0;90m(10ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;div[class&#x3D;&quot;DocSearch-Modal&quot;]&gt; was visible after 20 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;#docsearch-list&gt; was visible after 1080 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element&#x27;s [0;33m&lt;//div[@id&#x3D;&quot;navbartop&quot;]//ul//li[3]&gt;[0m inner text equals [0;33m&#x27;API Reference&#x27;[0m [0;90m(43ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the page title equals [0;33m&#x27;Blog | Nightwatch.js&#x27;[0m [0;90m(9ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Passed [equal]: Text content should be the expected
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>10</strong></span> assertions passed. (15.13s)
+        </p>
+
+
+      <hr>
+      <h2>nightwatch\nightwatch</h2>
+
+        <h3>Check whether Susciption fieldcan be filled</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the URL is [0;33m&#x27;https://nightwatchjs.org/&#x27;[0m [0;90m(9ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the page title equals [0;33m&#x27;Nightwatch.js | Node.js powered End-to-End testing framework&#x27;[0m [0;90m(17ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element [0;33m&lt;Element [name&#x3D;@titleLandingPage]&gt;[0m is visible [0;90m(37ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the URL is [0;33m&#x27;https://nightwatchjs.org/guide/quickstarts/create-and-run-a-nightwatch-test.html&#x27;[0m [0;90m(6ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element [0;33m&lt;Element [name&#x3D;@searchBar]&gt;[0m is enabled [0;90m(22ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of element [0;33m&lt;Element [name&#x3D;@searchBar]&gt;[0m equals [0;33m&#x27;test&#x27;[0m [0;90m(12ms)[0m
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>6</strong></span> assertions passed. (13.77s)
+        </p>
+
+
+      <hr>
+      <h2>unosquare\firstUnosquare.test</h2>
+
+        <h3>Should be Open Unosquare home page</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the URL is [0;33m&#x27;https://www.unosquare.com/&#x27;[0m [0;90m(4ms)[0m
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>1</strong></span> assertions passed. (3.231s)
+        </p>
+
+
+      <hr>
+      <h2>unosquare\unosquare</h2>
+
+        <h3>To check URL is the defined in page object file for mainpage</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;body&gt; was visible after 23 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              URL should be the defined in page Object file for mainpage [0;90m(12ms)[0m
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>2</strong></span> assertions passed. (2.146s)
+        </p>
+        <h3>Contact Us button should be Clickable</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;li a[href &#x3D; &quot;/ContactUs&quot;]&gt; was visible after 49 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element [0;33m&lt;img[src&#x3D;&quot;/assets/logos/unosquare_logo.svg&quot;]&gt;[0m doesn&#x27;t have css property [0;33m&#x27;display[0m: [0;33mnone&#x27;[0m [0;90m(40ms)[0m
+
+
+            </li>
+            <li>
+                <span class="error">&#10006;</span>
+
+              Testing if attribute [0;33m&#x27;href&#x27;[0m of element [0;33m&lt;Element [name&#x3D;@contactusMenu]&gt;[0m contains [0;33m&#x27;/ContactUs2&#x27;[0m in 5000ms - expected [0;32m&quot;contains &#x27;/ContactUs2&#x27;&quot;[0m but got: [0;31m&quot;/ContactUs&quot;[0m [0;90m(5265ms)[0m
+
+                Expected &quot;contains &#x27;/ContactUs2&#x27;&quot; but got: &quot;/ContactUs&quot;
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="error"><strong>FAILED:</strong></span>
+            <span class="error"><strong>1</strong></span> assertions failed and
+            <span class="success"><strong>2</span></strong> passed. (6.066s)
+        </p>
+        <h3>It is possible to fill the ContactUs form</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;li a[href &#x3D; &quot;/ContactUs&quot;]&gt; was visible after 23 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the URL is [0;33m&#x27;https://www.unosquare.com/ContactUs&#x27;[0m [0;90m(16ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the page title equals [0;33m&#x27;Agile Collaborative Software Development | Contact Unosquare&#x27;[0m [0;90m(4ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Check whether CSS transforms to uppercase  [0;90m(24ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if element [0;33m&lt;Element [name&#x3D;@formTitle]&gt;[0m contains text [0;33m&#x27;CONTACT US&#x27;[0m [0;90m(36ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of element [0;33m&lt;Element [name&#x3D;@nameInputForm]&gt;[0m equals [0;33m&#x27;John Doe&#x27;[0m [0;90m(27ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of element [0;33m&lt;Element [name&#x3D;@emailInputForm]&gt;[0m equals [0;33m&#x27;hola@test.com&#x27;[0m [0;90m(14ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if value of element [0;33m&lt;Element [name&#x3D;@phoneInputForm]&gt;[0m equals [0;33m&#x27;111222&#x27;[0m [0;90m(10ms)[0m
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>8</strong></span> assertions passed. (3.285s)
+        </p>
+        <h3>First POM Test: Verify Social buttons has the right link for Facebook Twitter and LinkedIn</h3>
+        <ul class="assertions">
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;img[class&#x3D;&quot;unicorn&quot;]&gt; was visible after 51 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              SVG for Facebook is displayed [0;90m(46ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              SVG for Twitter is displayed [0;90m(28ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              SVG for LinkedIn is displayed [0;90m(20ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Element &lt;//div[@class&#x3D;&quot; flex-container&quot;]//a[1]&gt; was visible after 19 milliseconds.
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the page title equals [0;33m&#x27;Unosquare - Home | Facebook&#x27;[0m [0;90m(2259ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the URL is [0;33m&#x27;https://www.unosquare.com/&#x27;[0m [0;90m(10ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the page title equals [0;33m&#x27;Unosquare (@unosquare) / Twitter&#x27;[0m [0;90m(4023ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the URL is [0;33m&#x27;https://www.unosquare.com/&#x27;[0m [0;90m(19ms)[0m
+
+
+            </li>
+            <li>
+                <span class="success">&#10004;</span>
+
+              Testing if the URL contains [0;33m&#x27;https://www.linkedin.com/&#x27;[0m [0;90m(1314ms)[0m
+
+
+            </li>
+        </ul>
+
+        <p>
+            <span class="success"><strong>OK.</strong></span>
+            <span class="success"><strong>10</strong></span> assertions passed. (11.07s)
+        </p>
+
+
+      <hr>
+
+  <div id="nightwatch-logo"></div>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script>
+  $(function() {
+    $('div.stacktrace').on('click', 'a', function(evt) {
+      evt.preventDefault();
+
+      var $link = $(this);
+      var $code = $link.parent().find('code');
+
+      $code.is(':visible') ? $link.text('hide stacktrace'):
+                             $link.text('view stacktrace');
+
+      $code.toggle();
+    });
+  });
+  </script>
+</body>
+</html>
