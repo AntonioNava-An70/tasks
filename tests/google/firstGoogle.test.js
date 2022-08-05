@@ -10,7 +10,7 @@ describe('Demo Test for grouping', () => {
 		browser
 			.url('https://www.google.com')
 			.maximizeWindow()
-			.assert.urlEquals('https://www.google.com')
+			.assert.urlEquals('https://www.google.com/')
 	})
 
 	it('Verify that image Google is displayed', () => {

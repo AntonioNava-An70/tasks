@@ -12,16 +12,11 @@ describe('Demo Running multiple Scripts', () => {
 			.assert.titleEquals(
 				'Nightwatch.js | Node.js powered End-to-End testing framework'
 			)
-			.assert.visible('@titleLandingPage')
-
-			.click('@installButton')
+			.clickOnInstallButton()
 		quickstart.assert
 			.urlEquals(
 				'https://nightwatchjs.org/guide/quickstarts/create-and-run-a-nightwatch-test.html'
 			)
-			.click('@searchButton')
-			.assert.enabled('@searchBar')
-			.setValue('@searchBar', 'test')
-			.assert.valueEquals('@searchBar', 'test')
+			.performSearch('test')
 	})
 })

@@ -2,6 +2,6 @@
 # folders
 node_modules
 tests_output
-
+.idea
 #files
 .env

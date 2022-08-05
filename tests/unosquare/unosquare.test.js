@@ -1,7 +1,6 @@
 describe('The Login Page', () => {
 	const unosquare = browser.page.mainpage()
 	const contactUs = browser.page.contactus()
-	const xpathSelectorsMainpage = require('../../selectors/unosquare/mainpage')
 
 	beforeEach((browser) => {
 		browser.maximizeWindow()
@@ -28,53 +27,39 @@ describe('The Login Page', () => {
 				'none'
 			)
 			// Step 2: Click on Contact Us button
-			.assert.attributeContains('@contactusMenu', 'href', '/ContactUs2')
-			.click('@contactusMenu')
+			.clickOnContactUs()
+			.assert.urlEquals('https://www.unosquare.com/ContactUs')
 		browser.end()
 	})
 
-	it('It is possible to fill the ContactUs form', () => {
+	it('It is possible to fill the ContactUs form and Validate warning messages', () => {
 		//Step 1: Being at Main page, Open Contact Us page
 		unosquare
 			.navigate()
-			.waitForElementVisible('@contactusMenu')
-			.click('@contactusMenu')
+			.clickOnContactUs()
 			.assert.urlEquals('https://www.unosquare.com/ContactUs')
 		//Step 2: Go to the Form and fill it
-		contactUs.assert
-			.titleEquals(
-				'Agile Collaborative Software Development | Contact Unosquare'
+		contactUs
+			.verifyTitleAndFormInContactUsPage()
+			.contactUnosquare()
+			.assert.valueEquals('@companyTextField', 'QA CoE course')
+			.assert.valueEquals('@phoneInputForm', '3300000000')
+			.assert.valueEquals(
+				'@messageTextArea',
+				'This is a Random Text used in a Course'
 			)
-			.assert.cssProperty(
-				'@formTitle',
-				'text-transform',
-				'uppercase',
-				'Check whether CSS transforms to uppercase '
-			)
-			.assert.textContains('@formTitle', 'CONTACT US')
-			.sendKeys('@nameInputForm', 'John Doe')
-			.assert.valueEquals('@nameInputForm', 'John Doe')
-			.sendKeys('@emailInputForm', 'hola@test.com')
-			.assert.valueEquals('@emailInputForm', 'hola@test.com')
-			.setValue('@phoneInputForm', '111222')
-			.assert.valueEquals('@phoneInputForm', '111222')
-
 		browser.end()
 	})
 
 	it('First POM Test: Verify Social buttons has the right link for Facebook Twitter and LinkedIn', () => {
 		// Step 1: Check if the SVGs for Social links are displayed
-		unosquare.navigate().waitForElementVisible('@unicornImg')
-		unosquare.assert.visible('@svgFacebook', 'SVG for Facebook is displayed')
-		unosquare.assert.visible('@svgTwitter', 'SVG for Twitter is displayed')
-		unosquare.assert.visible('@svgLinkedIn', 'SVG for LinkedIn is displayed')
+		unosquare
+			.navigate()
+			.waitForElementVisible('@unicornImg')
+			.checkSocialIconsDisplayed()
 
 		// Step 2: Click on Social link FaceBook
-		unosquare
-			.useXpath()
-			.click(xpathSelectorsMainpage.gotItCookieButton)
-			.waitForElementVisible(xpathSelectorsMainpage.socialLinkFacebook)
-			.click(xpathSelectorsMainpage.socialLinkFacebook)
+		unosquare.click('@gotItCookieButton').clickOnFacebookLink()
 
 		//Step 3: Check the Facebook Title Page
 		browser.windowHandles(function (result) {
@@ -93,17 +78,16 @@ describe('The Login Page', () => {
 		})
 
 		//Step 4: Click on Social Link Twitter
-		unosquare.assert
-			.urlEquals('https://www.unosquare.com/')
-			.useXpath()
-			.click(xpathSelectorsMainpage.socialLinkTwitter)
+		unosquare.clickOnTwitterLink()
 
 		//Step 5: Check the Twitter Title Page
 		browser.windowHandles(function (result) {
 			const newTab = result.value[1]
 
 			browser.switchToWindow(newTab)
-			browser.assert.titleEquals('Unosquare (@unosquare) / Twitter')
+			browser
+				.waitForElementVisible('div[data-testid="BottomBar"]')
+				.assert.titleEquals('Unosquare (@unosquare) / Twitter')
 			browser.closeWindow()
 		})
 
@@ -115,19 +99,10 @@ describe('The Login Page', () => {
 		})
 
 		//Step 4: Click on Social Link LinkedIn
-		unosquare.assert
-			.urlEquals('https://www.unosquare.com/')
-			.useXpath()
-			.click(xpathSelectorsMainpage.socialLinkLinkedIn)
-
-		//Step 5: Check the Twitter Title Page
-		browser.windowHandles(function (result) {
-			const newTab = result.value[1]
-
-			browser.switchToWindow(newTab)
-			browser.assert.urlContains('https://www.linkedin.com/')
-			browser.closeWindow()
-		})
+		unosquare
+			.clickOnLinkedInLink()
+			//Step 5: Check the Twitter Title Page
+			.openedTabHandler('https://www.linkedin.com/')
 		browser.end()
 	})
 })
