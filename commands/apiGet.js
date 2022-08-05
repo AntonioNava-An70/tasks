@@ -1,24 +1,14 @@
-var util = require('util')
-var events = require('events')
-
+const axios = require('axios')
 function apiGet() {}
-util.inherits(apiGet, events.EventEmitter)
 
-apiGet.prototype.command = function (apiUrl, success) {
-	var request = require('superagent')
-
-	request.get(
-		apiUrl,
-		function (error, response) {
-			if (error) {
-				console.log(error)
-				return
-			}
-
-			success(response)
-			this.emit('complete')
-		}.bind(this)
-	)
+apiGet.prototype.command = async function (apiUrl, success) {
+	try {
+		const response = await axios.get(apiUrl)
+		success(response)
+		return response
+	} catch (error) {
+		console.error(error)
+	}
 }
 
 module.exports = apiGet
