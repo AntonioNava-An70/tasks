@@ -32,10 +32,10 @@ module.exports = {
 		{
 			contactUnosquare: function () {
 				this.api.pause(1000)
+				const form = getData()
 				return this.waitForElementVisible('@formTitle', 1000)
-
 					.assert.textContains('@formTitle', 'CONTACT US')
-					.setValue('@companyTextField', 'QA CoE course')
+					.setValue('@companyTextField', form.company)
 					.setValue('@phoneInputForm', '3300000000')
 					.setValue(
 						'@messageTextArea',
@@ -59,4 +59,7 @@ module.exports = {
 			},
 		},
 	],
+}
+function getData() {
+	return require('../../dataExternal/unosquareFORM.json') // Using the correct path is important
 }

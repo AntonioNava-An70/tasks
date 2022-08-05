@@ -42,7 +42,7 @@ describe('The Login Page', () => {
 		contactUs
 			.verifyTitleAndFormInContactUsPage()
 			.contactUnosquare()
-			.assert.valueEquals('@companyTextField', 'QA CoE course')
+			.assert.valueEquals('@companyTextField', 'QA CoE course - Json')
 			.assert.valueEquals('@phoneInputForm', '3300000000')
 			.assert.valueEquals(
 				'@messageTextArea',
