@@ -4,6 +4,9 @@ module.exports = {
 		contactusMenu: {
 			selector: 'li a[href = "/ContactUs"]',
 		},
+		blogMenu: {
+			selector: 'li a[href = "https://blog.unosquare.com"]',
+		},
 		industriesMenu: {
 			selector: 'li a[href = "/Industries"]',
 		},
@@ -49,6 +52,12 @@ module.exports = {
 					.attributeContains('@contactusMenu', 'href', '/ContactUs')
 					.click('@contactusMenu')
 			},
+			clickOnBlog: function () {
+				return this.assert
+					.attributeContains('@blogMenu', 'href', 'https://blog.unosquare.com')
+					.click('@blogMenu')
+			},
+
 			checkSocialIconsDisplayed: function () {
 				return this.assert
 					.visible('@svgFacebook', 'SVG for Facebook is displayed')
