@@ -14,18 +14,20 @@ module.exports = {
 			selector: '//*[@id="addToCart_feature_div"]/div[1]',
 			locateStrategy: 'xpath',
 		},
+		goToCartButton: {
+			selector: '//*[@id="sw-gtc"]',
+			locateStrategy: 'xpath',
+		},
 		resultsSubtitle: {
 			selector:
 				'//span[@class="rush-component"]//div//div[@tabindex="0"]//span[text()="RESULTS"]',
 			locateStrategy: 'xpath',
 		},
-
 		firstPricePartA: {
 			selector:
 				'//div[@cel_widget_id="MAIN-SEARCH_RESULTS-1"]//span[@class="a-price-whole"]',
 			locateStrategy: 'xpath',
 		},
-
 		firstPricePartB: {
 			selector:
 				'//div[@cel_widget_id="MAIN-SEARCH_RESULTS-1"]//span[@class="a-price-fraction"]',
@@ -33,17 +35,11 @@ module.exports = {
 		},
 		secondPrice: {
 			selector:
-				'//*[@id="corePrice_feature_div"]/div/span/span[2]/span[@class="a-price-whole"]',
-			locateStrategy: 'xpath',
-		},
-		secondPrice2: {
-			selector:
 				'//span[@class="a-label a-checkbox-label"]//div[@data-rows="1"]//span//b[contains(text(),"This item")]//parent::span//parent::div//following-sibling::div//div//div//span//span',
 			locateStrategy: 'xpath',
 		},
 		thirdPrice: {
-			selector:
-				'//div[@id="sw-subtotal"]//span//span[@class="a-price sw-subtotal-amount"]//span[@class="a-offscreen"]',
+			selector: '//span[@id="sc-subtotal-amount-activecart"]/span',
 			locateStrategy: 'xpath',
 		},
 		firstProductLink: {
@@ -70,53 +66,13 @@ module.exports = {
 					.click('@searchButton')
 					.waitForElementVisible('@resultsSubtitle')
 			},
-			obtainFirstPrice: function () {
-				var value = ''
-				this.getText('@firstPricePartA', function (result) {
-					value = `$${result.value}.`
-				}).getText('@firstPricePartB', function (result) {
-					value += result.value
-				})
-
-				return value
-			},
-			obtainSecondPrice: function () {
-				var value = ''
-				this.getText('@secondPrice', function (result) {
-					value = result.value
-				})
-
-				return value
-			},
 			clickOnAddToCart: function () {
-				return this.click('@addToCartButton').assert.urlContains('/cart')
+				return this.click('@addToCartButton')
 			},
 			clickOnGoToCart: function () {
-				return this.click('xpath', '//*[@id="sw-gtc"]')
+				return this.click('@goToCartButton')
 					.assert.urlContains('/cart')
 					.assert.textContains('@cartTitle', 'Shopping Cart')
-			},
-
-			obtainThirdPrice: function () {
-				var value = ''
-				browser.getText(
-					'xpath',
-					'//*[@id="sc-subtotal-amount-activecart"]/span',
-					function (result) {
-						value = result.value
-					}
-				)
-
-				return value
-			},
-			clickOnFirstResultItem: function () {
-				this.waitForElementVisible(
-					'xpath',
-					'//div[@cel_widget_id="MAIN-SEARCH_RESULTS-1"]//a[@class="a-link-normal s-no-outline"]'
-				).click(
-					'xpath',
-					'//div[@cel_widget_id="MAIN-SEARCH_RESULTS-1"]//a[@class="a-link-normal s-no-outline"]'
-				)
 			},
 		},
 	],

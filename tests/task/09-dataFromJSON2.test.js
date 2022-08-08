@@ -6,9 +6,7 @@ describe('Task 2 Data Driven Testing', () => {
 
 	// Delete Item
 	it('Task 2', () => {
-		var productValue = ''
-		var secondPrice
-		var thirdPrice
+		var firstPrice, secondPrice, thirdPrice
 		// Go to Amazon.com
 		homePageAmazon
 			.navigate()
@@ -18,30 +16,33 @@ describe('Task 2 Data Driven Testing', () => {
 			// Verify Item is displayed on the screen and  locate the first one, then store the price
 			.assert.visible('@resultSection')
 			.getText('@firstPricePartA', function (result) {
-				productValue = `$${result.value}.`
+				firstPrice = `$${result.value}.`
 			})
 			.getText('@firstPricePartB', function (result) {
-				productValue += result.value
+				firstPrice += result.value
+				console.log('1st Price Obtained', firstPrice)
 			})
 
 		// Click on the First Result
 		homePageAmazon.click('@firstProductLink')
 
 		// Once in the details page compare this price vs the above one (first stored price)
-		homePageAmazon.getText('@secondPrice2', function (result) {
+		homePageAmazon.getText('@secondPrice', function (result) {
 			secondPrice = result.value
-			console.log('3th Price Obtained', secondPrice)
+			console.log('2nd Price Obtained', secondPrice)
 			browser.assert.deepEqual(
-				`${productValue}`,
+				`${firstPrice}`,
 				secondPrice,
 				'Should be the same value'
 			)
 		})
 
 		// Click on Add to Cart.
-		homePageAmazon.click('@addToCartButton')
+		homePageAmazon.clickOnAddToCart()
 
 		// Go to Cart and verify again the price of the phone
+		homePageAmazon.clickOnGoToCart()
+
 		homePageAmazon
 			.getText('@thirdPrice', function (result) {
 				thirdPrice = result.value
@@ -55,7 +56,6 @@ describe('Task 2 Data Driven Testing', () => {
 
 		// Delete Item
 		homePageAmazon
-			.clickOnGoToCart()
 			.click('@deleteActionOnCart')
 			.assert.textContains('@cartTitle', 'Your Amazon Cart is empty.')
 		after(() => {
