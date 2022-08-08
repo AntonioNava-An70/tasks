@@ -8,6 +8,15 @@ module.exports = {
 		aboutLink: {
 			selector: 'li a[href="https://www.unosquare.com/About"]',
 		},
+		recentPostsLabel: {
+			selector: 'label[for="tab1"]',
+		},
+		popularPostsLabel: {
+			selector: 'label[for="tab2"]',
+		},
+		searchBar: {
+			selector: '#search-bar',
+		},
 	},
 	commands: [
 		{
@@ -16,8 +25,8 @@ module.exports = {
 					.attributeContains('@headerBlog', 'href', '/ContactUs')
 					.click('@headerBlog')
 			},
-			performSearchBlog: function () {
-				const searchTerms = getData()
+			performSearchBlog: function (filename) {
+				const searchTerms = getData(filename)
 				searchTerms.terms.forEach((ele) => {
 					this.assert
 						.visible('#search-bar')
@@ -31,6 +40,6 @@ module.exports = {
 		},
 	],
 }
-function getData() {
-	return require('../../dataExternal/searchTerms.json') // Using the correct path is important
+function getData(filename) {
+	return require(`../../dataExternal/${filename}`) // Using the correct path is important
 }

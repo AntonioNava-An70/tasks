@@ -17,20 +17,16 @@ describe('Load Data From JSON', () => {
 		blog.assert
 			.urlEquals('https://blog.unosquare.com/')
 			// Under the search bar validate that Recent Post and Popular Posts elements are visible
-			.assert.visible('label[for="tab1"]')
-			.assert.textContains('label[for="tab1"]', 'RECENT POSTS')
-
-			.assert.visible('label[for="tab2"]')
-			.assert.textContains('label[for="tab2"]', 'POPULAR POSTS')
-
+			.assert.visible('@recentPostsLabel')
+			.assert.textContains('@recentPostsLabel', 'RECENT POSTS')
+			.assert.visible('@popularPostsLabel')
+			.assert.textContains('@popularPostsLabel', 'POPULAR POSTS')
 			// Using the visible Search bar and a JSON file to provide the data, search the following: "QA", "Development", "JAVA", "Testing"
-			.assert.visible('#search-bar')
-			.performSearchBlog()
-
+			.assert.visible('@searchBar')
+			.performSearchBlog('searchTerms.json')
 		// Go to About page
 		blog.click('@aboutLink')
-		// // Using asserts verify that the following names are present: Mario Di Vece, Giancarlo Di Vece, Eduardo Arias, Ignacion Miranda and Diego Huerta
-		about.checkNamesInAbout()
-		// .assert.elementPresent('@names')
+		// Using asserts verify that the following names are present: Mario Di Vece, Giancarlo Di Vece, Eduardo Arias, Ignacion Miranda and Diego Huerta
+		about.checkNamesInAbout('searchTerms.json')
 	})
 })
