@@ -5,7 +5,7 @@ describe('Load Data From JSON', () => {
 	beforeEach((browser) => {
 		browser.maximizeWindow()
 	})
-	it('Task 1', () => {
+	it('Task 1 Data Driven Testing ', () => {
 		// Go to unosquare.com
 		unosquare
 			.navigate()

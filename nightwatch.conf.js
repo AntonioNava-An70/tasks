@@ -3,7 +3,11 @@ module.exports = {
 	// if this is not specified, the test source must be passed as the second argument to the test runner.
 	src_folders: ['Tests'],
 	custom_commands_path: './commands',
-	page_objects_path: ['PageObjects/Unosquare', 'PageObjects/Nightwatch'],
+	page_objects_path: [
+		'PageObjects/Unosquare',
+		'PageObjects/Nightwatch',
+		'PageObjects/Amazon',
+	],
 	skip_testcases_on_fail: false,
 	webdriver: {
 		start_process: true,
